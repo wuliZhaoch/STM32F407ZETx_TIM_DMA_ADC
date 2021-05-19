@@ -14,3 +14,13 @@ STM32F407ZETx_TIM_DMA_ADC
 
 - 如果我们的输入信号是 20KHz （周期为 50us），若要将它恢复出来，一个周期最少采样20个点，此时采样率要达到400KHz，所以ADC的采样率必须在400KHz 以上。为了达到最好的精度，我们选取ADC时钟为12MHz，即6分频。在12MHz 以及保证采样率的情况下，采样时间越长其，准确性就越好。
 
+- STM32CubeMX ADC 配置：
+
+  - Parameter Settings:
+    - Scan Conversion Mode    ---> Enable
+    - Continuous Conversion Mode   ---> Enable
+    - DMA Continuous Requests   ---> Enable
+
+  - DMA Setting:
+    - DMA Mode	--->	Circular
+    - Data Width    --->    Word
